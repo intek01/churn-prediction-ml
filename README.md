@@ -8,15 +8,6 @@ Three models — logistic regression, a decision tree, and a random
 forest — are trained on identical preprocessed features and compared
 head-to-head, rather than reporting a single model's number in isolation.
 
-## Why this exists
-
-Most of this portfolio's projects (`pdf-qa-agent`, `erp-ops-agent`,
-`sales-etl-pipeline`) are LLM-agent or data-engineering work. This one is
-deliberately the opposite: no LLMs, no orchestration — just loading real
-tabular data, engineering features from it, fitting a few standard
-classifiers, and evaluating them honestly on a problem (churn) where the
-classes are imbalanced enough that a naive model looks deceptively good.
-
 ## What it does
 
 - **`src/data_prep.py`** — loads the raw CSV and cleans it: encodes
@@ -88,7 +79,4 @@ genuinely exercised, not just assumed.
 - Class imbalance is handled via `class_weight="balanced"`, not
   resampling (SMOTE, undersampling) — a deliberate, simpler choice,
   documented here rather than left unstated.
-- This is tabular, classical ML — no deep learning. (That gap is covered
-  elsewhere in this portfolio by a separate research publication on an
-  LSTM-XGBoost ensemble, which is a different kind of problem — time-series
-  forecasting, not classification.)
+- This is tabular, classical ML — no deep learning is used here.
